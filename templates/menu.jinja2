@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Menu</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/estilo_menu.css')}}"/>
+  <meta charset="utf-8">
+</head>
+<body> 
+
+<nav class="menu">
+	<ul class="active">
+		<li class="current-item"><a href="#">Home</a></li>
+		<li><a href="#">Meu Cadastro</a></li>
+		<li><a href="#">Consultar CEP</a></li>
+		<li class="active-sair"><a href="{{url_for('home')}}">Sair</a></li>
+	</ul>
+	
+</nav>
+
+<iframe class="maps-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239031.16256470914!2d-47.56425438948377!3d-20.59369596272778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b0a9b35dc60831%3A0x68b8558a69681462!2sFranca%2C+SP!5e0!3m2!1spt-BR!2sbr!4v1555286208630!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+ <div class="cep-page">
+<div class="cep">
+	<p class="cep-p">CONSULTE SEU CEP</p>
+	<input class="cep-item" type="text" name="CEP" />
+	<input class="cep-item-b" type="button" name="Procurar" value="Consultar" />
+</div>
+</div>
+</body>
+</html>

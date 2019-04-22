@@ -1,0 +1,19 @@
+<html>
+<head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}">
+        <script type="text/javascript" src="{{url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" method="POST" action="{{url_for('logar')}}">
+      <input type="text" placeholder="Email" name="email" />
+      <input type="password" placeholder="Senha" name="senha" />
+      <input type="submit" value="Entrar" />
+      <p class="message">Sem cadastro? <a href="{{ url_for('login') }}">Cria sua conta</a></p>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+

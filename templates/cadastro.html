@@ -1,0 +1,21 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}">
+	<script type="text/javascript" src="{{url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" method="POST" action="{{url_for('cadastrar')}}">
+      	<input type="text" placeholder="Nome" name="nome"/>
+        <input type="text" placeholder="CPF" name="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>
+	<input type="text" placeholder="RG" name="rg"/>
+	<input type="text" placeholder="Email" name="email"/>
+	<input type="password" placeholder="Senha" name="senha"/>
+      	<input type="submit" value="Cadastrar" id="btnEnviar">
+      	<p class="message">Já sou registrado?  <a href="{{url_for('home')}}">Entrar</a></p>
+    </form>
+  </div>
+</div>
+</body>
+</html>

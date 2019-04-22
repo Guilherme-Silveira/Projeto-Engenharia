@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+{% block content %}
+{% for j, i in enumerate(tower) %}
+	<p>Torre {{j+1}}</p>
+	{% if areaInside(i[0], i[1], location.latitude, location.longitude) == True %}
+		{%if j==0%}
+			{% set ant = antenas()[0:3]%}
+		{% endif %}
+		{%if j==1%}
+			{% set ant = antenas()[3:6]%}
+		{% endif %}
+		{%if j==2%}
+			{% set ant = antenas()[6:9]%}
+		{% endif %}
+		{%if j==3%}
+			{% set ant = antenas()[9:12]%}
+		{% endif %}
+		{% for k in ant %}
+			{% set azimute = azi(i[0], i[1], location.latitude, location.longitude) %}
+			{% if float(azimute)>=k[1]-32.5 and float(azimute)<=k[1]+32.5 and str(k[2]) == "b'1'" %}
+				<p>{{k[0], True}}</p>
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+	<p>------------------------------------------</p>
+{% endfor %}
+{% endblock %}
+</body>
+</html>
+
