@@ -6,14 +6,16 @@
 <body>
 <div class="login-page">
   <div class="form">
-    <form class="login-form" method="POST" action="{{url_for('cadastrar')}}">
+    <form class="login-form" method="POST" action="{{url_for('controllerCadastroUsuario')}}">
       	<input type="text" placeholder="Nome" name="nome"/>
         <input type="text" placeholder="CPF" name="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>
-	<input type="text" placeholder="RG" name="rg"/>
-	<input type="text" placeholder="Email" name="email"/>
-	<input type="password" placeholder="Senha" name="senha"/>
+				<input type="text" placeholder="RG" name="rg"/>
+				<input type="text" placeholder="Email" name="email"/>
+				<input type="password" placeholder="Senha" name="senha"/>
+				<input type="text" placeholder="Telefone" name="telefone"/>
+				<input type="hidden" value="1" name="tipo"/>
       	<input type="submit" value="Cadastrar" id="btnEnviar">
-      	<p class="message">Já sou registrado?  <a href="{{url_for('home')}}">Entrar</a></p>
+      	<p class="message">Já sou registrado! <a href="{{url_for('index')}}">Entrar</a></p>
     </form>
   </div>
 </div>
